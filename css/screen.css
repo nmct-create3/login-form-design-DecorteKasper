@@ -1,12 +1,17 @@
 /*------------------------------------*\
 #FONTS
 \*------------------------------------*/
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 /*------------------------------------*\
 #Variables
 \*------------------------------------*/
 
-:root {}
+:root {
+    --global-color: #20223a;
+    --color-background: #f5f6fa;
+    --color-background-selection: #3385ff;
+    --color-link: #3385ff
+}
 
 /* CSS variables here */
 
@@ -23,12 +28,12 @@
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
+    font-family: 'Inter',Helvetica, arial, sans-serif;
     color: grey;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
+    background-color: var(--color-background);
 }
 
 *,
@@ -45,13 +50,13 @@ html {
 */
 
 ::-moz-selection {
-    background: HotPink;
+    background: var(--color-background-selection);
     color: white;
     text-shadow: none;
 }
 
 ::selection {
-    background: HotPink;
+    background: var(--color-background-selection);
     color: white;
     text-shadow: none;
 }
@@ -156,18 +161,18 @@ hr {
 }
 
 a {
-    color: HotPink;
+    color: var(--color-link);
     transition: all .1s ease-in-out;
 }
 
 a:visited,
 a:active {
-    color: HotPink;
+    color: var(--color-link);
 }
 
 a:hover,
 a:focus {
-    color: DeepPink;
+    color: var(--color-link);
 }
 
 /*------------------------------------*\
@@ -431,28 +436,87 @@ a:focus {
     ---
     Website main logo
 */
+.c-logo{
+    height: 24px;
+    display: flex;
+    justify-content: center;
+}
+.c-logo__symbol{
+    display: block;
+    height: 100%;
+}
 
 /*
     Component: Card
     ---
     Card with box shadow
 */
+.c-card{
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    padding: 48px;
+}
+
+.c-card__body{
+
+}
+
+.c-card__title{
+    font-size: 18px;
+    font-weight: bold;
+    color: #20223A;
+    text-align: center;
+}
+
+.c-card__footer{
+
+}
 
 /*
     Component: Forms
     ---
     Everything form related here
 */
+.c-form-field--option{
+    display: flex;
+    flex-direction: row;
+}
 
 /*
     Component: Input
     ---
     Class to put on all input="text" like form inputs
 */
+label{
+    display: block;
+}
 
-.c-input {}
+.c-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 
-.c-input:focus {}
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    border: 1px solid #E2E3E7;
+    border-radius: 3px;
+
+    font-family: inherit;
+    color: var(--global-color);
+    font-size: 16px;
+    line-height: 24px;
+    padding: 11px;
+
+    outline: none;
+}
+
+.c-input:focus {
+    border-color: #3385FF;
+    box-shadow: h-offset v-offset blur spread color;
+    box-shadow: 0px 0px 0px 3px #3385ff4d;
+}
 
 /*
     Component: Label
@@ -472,13 +536,32 @@ a:focus {
     Class to put on form buttons or links
 */
 
-.c-button {}
+.c-button {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #3385FF;
+    border: 1px solid #2E77E6;
+    border-radius: 3px;
+    line-height: 20px;
+    width: 336px;
+    padding: 13px;
+}
 
-.c-button:hover {}
+.c-button:hover {
+    background-color: #4F95FF;
+    cursor: pointer;
+}
 
-.c-button:focus {}
+.c-button:focus {
+    border-color: #2E77E6;
+    box-shadow: h-offset v-offset blur spread color;
+    box-shadow: 0px 0px 0px 3px #3385ff;
+}
 
-.c-button:active {}
+.c-button:active {
+    background-color: #2E77E6;
+}
 
 .c-button--block {}
 
